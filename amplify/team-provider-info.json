@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-burpeechallengeapp-dev-220342-authRole",
+      "UnauthRoleArn": "arn:aws:iam::994762295439:role/amplify-burpeechallengeapp-dev-220342-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::994762295439:role/amplify-burpeechallengeapp-dev-220342-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-burpeechallengeapp-dev-220342-deployment",
+      "UnauthRoleName": "amplify-burpeechallengeapp-dev-220342-unauthRole",
+      "StackName": "amplify-burpeechallengeapp-dev-220342",
+      "StackId": "arn:aws:cloudformation:us-east-2:994762295439:stack/amplify-burpeechallengeapp-dev-220342/d74e0f30-4e41-11eb-b9b6-02301d6e31ca",
+      "AmplifyAppId": "d19pxbxaxq3p3b"
+    }
+  }
+}

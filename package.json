@@ -1,7 +1,7 @@
 {
-  "name": "Basic-React-App",
+  "name": "basic-react-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "---  Basic React App is a boilerplate that allows users to get started building React applications without the long slog of building out a basic file structure, configuring webpack or dealing with trifling syntax errors. The repository is easily installed and provides a basic component structure and server that will have you saying Hello World on localhost:4001 in minutes. # Get started",
   "main": "webpack.config.js",
   "scripts": {
     "start": "nodemon server/server.js",
@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.33",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "aws-amplify": "^3.3.13",
     "axios": "^0.19.2",
     "babel-loader": "^8.0.6",
     "eslint": "^7.16.0",
@@ -41,6 +43,13 @@
         "loose": true
       }
     ]
-  ]
-  
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melfuechect/workout_appy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/melfuechect/workout_appy/issues"
+  },
+  "homepage": "https://github.com/melfuechect/workout_appy#readme"
 }

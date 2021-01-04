@@ -9,8 +9,9 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Home from './components/Home';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
-export default function App() {
+function App() {
 
   return (
     <Router>
@@ -30,8 +31,12 @@ export default function App() {
               <Info />
             </Route>
           </Switch>
+          <AmplifySignOut />
+
         </div>
       </Provider>
     </Router>
   )
 }
+
+export default withAuthenticator(App);
