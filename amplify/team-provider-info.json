@@ -10,6 +10,11 @@
       "StackName": "amplify-burpeechallengeapp-dev-220342",
       "StackId": "arn:aws:cloudformation:us-east-2:994762295439:stack/amplify-burpeechallengeapp-dev-220342/d74e0f30-4e41-11eb-b9b6-02301d6e31ca",
       "AmplifyAppId": "d19pxbxaxq3p3b"
+    },
+    "categories": {
+      "auth": {
+        "burpeechallengeapp9b27816b": {}
+      }
     }
   }
 }

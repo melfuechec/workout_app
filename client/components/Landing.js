@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
-export default function Landing() {
+function Landing() {
     return (
         <div>
             <Navbar />
-            <h1 align="center">Landing Page</h1>
-            Some info about the burpee challenge
-            <button>Sign Up</button>
-            <button>Log In</button>
+            <AmplifySignOut />
         </div>
     )
 }
+
+export default withAuthenticator(Landing);
