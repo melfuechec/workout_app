@@ -1,4 +1,9 @@
 /* No CSS *//*# sourceMappingURL=styles.css.map */
+:root {
+    --amplify-primary-color: #c5b9b7;
+    --amplify-primary-tint: #947f7b;
+    --amplify-primary-shade: #7a6d6b;
+  }
 html {
     display: flex;
     height: 100vh;
@@ -12,7 +17,7 @@ html {
 #navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: center;
 } 
 

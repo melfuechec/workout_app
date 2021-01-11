@@ -16,7 +16,7 @@ module.exports = {
         use: {
           loader: 'babel-loader', //use babel loader to transpile
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'], // use the ES6 and React presets with babel
+            presets: ['@babel/preset-env', '@babel/preset-react', { 'plugins': ['@babel/plugin-proposal-class-properties']}], // use the ES6 and React presets with babel
           },
         },
       },

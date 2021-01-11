@@ -9,8 +9,9 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Home from './components/Home';
+import { withAuthenticator } from '@aws-amplify/ui-react'
 
-export default function App() {
+function App() {
 
   return (
     <Router>
@@ -30,9 +31,17 @@ export default function App() {
               <Info />
             </Route>
           </Switch>
+
         </div>
       </Provider>
     </Router>
   )
 }
 
+export default withAuthenticator(App);
+
+// You have deployed a web application using AWS Amplify! You have added authentication 
+// to your app allowing users to sign up, sign in, and manage their account. The app also 
+// has a scalable GraphQL API configured with an Amazon DynamoDB database allowing users 
+// to create and delete notes. You have also added file storage using Amazon S3 allowing 
+// users to upload images and view them in their app.

@@ -4,15 +4,15 @@ export default class Countdown extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            workSeconds: 5,
-            restSeconds: 5,
+            workSeconds: 2,
+            restSeconds: 2,
             displaySeconds: 5,
             nowResting: true,
-            rounds:3,
+            rounds:2,
             roundComplete: true,
-            total:0,
             counting:false,
-            finalTime:0
+            total:0,
+            workoutComplete: false
         };
         this.handleStartClick = this.handleStartClick.bind(this)
         this.handleChangeWorkSecs = this.handleChangeWorkSecs.bind(this)
@@ -25,18 +25,17 @@ export default class Countdown extends React.Component {
         this.increaseTotal = this.increaseTotal.bind(this)
         this.decrementRound = this.decrementRound.bind(this)
         this.handleLogWorkout = this.handleLogWorkout.bind(this)
+        this.imageGenerator = this.imageGenerator.bind(this)
     }
 
     // runs the decrement function once every second
-    interval() { 
-        setInterval(this.decrement, 1000);
+    interval ()  { 
+        this.intervalID = setInterval(this.decrement, 1000);
     }
 
     // increases total for final time at end of workout
     increaseTotal() {
-        this.setState((state)=> {
-            return {total:state.total+1}
-        })
+        this.setState((state)=> { return { total:state.total+state.workSeconds } })
     }
 
     // checks if in rest or work mode, then sets displaySeconds to restSeconds or workSeconds
@@ -51,6 +50,9 @@ export default class Countdown extends React.Component {
     // toggles between work and rest mode, and then runs the decrement function once every second
     toggleNowResting() {
         this.setState((state)=> {return {nowResting: !state.nowResting}})
+    }    
+    toggleNowCounting() {
+        this.setState((state)=> {return {counting: !state.counting}})
     }
 
     // toggles between round complete true or false and calls decrementRound to check if roundComplete is true and subtract a round from state.rounds
@@ -59,6 +61,7 @@ export default class Countdown extends React.Component {
             return {roundComplete:!state.roundComplete}
         })
         this.decrementRound()
+        this.increaseTotal()
     }
 
     // subtracts one round from state.rounds if roundComplete is true
@@ -72,29 +75,30 @@ export default class Countdown extends React.Component {
 
     // subtracts 1 from displaySecond and sets new displaySeconds state, if displaySeconds is 0 then clears interval and flips work/rest mode and then starts decrement again
     decrement() {
-        this.increaseTotal();
         console.log('decrement')
         console.log(this.state)
 
         this.setState((state)=>{ return {displaySeconds: state.displaySeconds -1 }});
 
         if(this.state.displaySeconds==0) {
-            clearInterval(this.intervalID);
             this.toggleNowResting();
             this.displayRestOrWork();
             this.toggleRoundComplete();
         }
         if (this.state.rounds==0){
-            clearInterval(this.intervalID);
+            this.setState((state)=> {
+                return {workoutComplete:!state.workoutComplete}
+            })
             console.log('WORKOUT COMPLETE')
+            clearInterval(this.intervalID);
         }
     }
 
     handleStartClick () {
-        this.setState({counting:true});
-        clearInterval(this.intervalID);
-        this.displayRestOrWork();
         this.interval();
+        this.setState({counting:true});
+        this.displayRestOrWork();
+        this.decrement();
         console.log('handleStartClick');
     }
 
@@ -113,10 +117,23 @@ export default class Countdown extends React.Component {
     handlePauseClick(e) {
         clearInterval(this.intervalID);
         this.setState({ nowResting: true });
+        this.setState({ counting: false })
     }
     handleLogWorkout() {
 
     }
+    imageGenerator() {
+
+        const images = [ 
+           <div> <iframe src="https://giphy.com/embed/5EJHDSPpFhbG0" width="480" height="255" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dogs-exercise-workout-5EJHDSPpFhbG0"></a></p> </div> ,
+           <div> <iframe src="https://giphy.com/embed/VFDeGtRSHswfe" width="480" height="304" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/VFDeGtRSHswfe"></a></p> </div> ,
+           <div> <iframe src="https://giphy.com/embed/fPWJGmS8Qizy8" width="480" height="368" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/exercise-poodle-fPWJGmS8Qizy8"></a></p> </div> ,
+           <div> <iframe src="https://giphy.com/embed/12TOAdbCuQe2wE" width="480" height="363" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dog-costume-12TOAdbCuQe2wE"></a></p> </div> ,
+           <div> <iframe src="https://giphy.com/embed/1fj7LPAGBMiCfxqtQy" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-aww-eyebleach-1fj7LPAGBMiCfxqtQy"></a></p> </div> 
+        ];
+        return images[Math.floor(Math.random() * images.length)]
+    } 
+
     render() {
         const { displaySeconds, workSeconds, restSeconds, rounds} = this.state;
 
@@ -137,14 +154,15 @@ export default class Countdown extends React.Component {
                     <button onClick={this.handleLogWorkout}>Log Workout</button>
 
                     <div className="countdown-wrapper">
-
-                        {workSeconds && (
-                            <div className="countdown-item">
-                                <SVGCircle radius={displaySecondsRadius}/>
-                                {displaySeconds}
-                                <span>seconds</span>
-                            </div>
-                        )}
+                        { !this.state.workoutComplete ?                         
+                            { workSeconds } && (
+                        <div className="countdown-item">
+                            <SVGCircle radius={displaySecondsRadius}/>
+                            {displaySeconds}
+                            <span>seconds</span>
+                        </div> ) : 
+                            this.imageGenerator() 
+                         }
                     </div>
                 </div>
             </div>
