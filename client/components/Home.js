@@ -1,9 +1,10 @@
 import React from 'react';
 import Countdown from './Countdown';
 import Navbar from './Navbar';
+import { withAuthenticator } from 'aws-amplify-react';
 import { AmplifySignOut } from '@aws-amplify/ui-react'
 
-export default function Home(props) {
+function Home(props) {
   return (
   <div>
     <Navbar />
@@ -13,3 +14,4 @@ export default function Home(props) {
   </div>
   )
   }
+  export default withAuthenticator(Home);

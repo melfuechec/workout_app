@@ -15,7 +15,7 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
-          "name" : "getNote",
+          "name" : "getWorkout",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -33,20 +33,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listNotes",
+          "name" : "listWorkouts",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteFilterInput",
+              "name" : "ModelWorkoutFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -71,7 +71,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelNoteConnection",
+            "name" : "ModelWorkoutConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -83,7 +83,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "Note",
+        "name" : "Workout",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -201,7 +201,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelNoteConnection",
+        "name" : "ModelWorkoutConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -212,7 +212,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "OBJECT",
-              "name" : "Note",
+              "name" : "Workout",
               "ofType" : null
             }
           },
@@ -236,7 +236,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelNoteFilterInput",
+        "name" : "ModelWorkoutFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -283,7 +283,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteFilterInput",
+              "name" : "ModelWorkoutFilterInput",
               "ofType" : null
             }
           },
@@ -296,7 +296,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteFilterInput",
+              "name" : "ModelWorkoutFilterInput",
               "ofType" : null
             }
           },
@@ -306,7 +306,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelNoteFilterInput",
+            "name" : "ModelWorkoutFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -732,7 +732,7 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
-          "name" : "createNote",
+          "name" : "createWorkout",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -742,7 +742,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateNoteInput",
+                "name" : "CreateWorkoutInput",
                 "ofType" : null
               }
             },
@@ -752,20 +752,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteConditionInput",
+              "name" : "ModelWorkoutConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateNote",
+          "name" : "updateWorkout",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -775,7 +775,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateNoteInput",
+                "name" : "UpdateWorkoutInput",
                 "ofType" : null
               }
             },
@@ -785,20 +785,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteConditionInput",
+              "name" : "ModelWorkoutConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteNote",
+          "name" : "deleteWorkout",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -808,7 +808,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteNoteInput",
+                "name" : "DeleteWorkoutInput",
                 "ofType" : null
               }
             },
@@ -818,14 +818,14 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteConditionInput",
+              "name" : "ModelWorkoutConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -837,7 +837,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateNoteInput",
+        "name" : "CreateWorkoutInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -886,7 +886,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelNoteConditionInput",
+        "name" : "ModelWorkoutConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -924,7 +924,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteConditionInput",
+              "name" : "ModelWorkoutConditionInput",
               "ofType" : null
             }
           },
@@ -937,7 +937,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelNoteConditionInput",
+              "name" : "ModelWorkoutConditionInput",
               "ofType" : null
             }
           },
@@ -947,7 +947,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelNoteConditionInput",
+            "name" : "ModelWorkoutConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -957,7 +957,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateNoteInput",
+        "name" : "UpdateWorkoutInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1006,7 +1006,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteNoteInput",
+        "name" : "DeleteWorkoutInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1027,34 +1027,34 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
-          "name" : "onCreateNote",
+          "name" : "onCreateWorkout",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateNote",
+          "name" : "onUpdateWorkout",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteNote",
+          "name" : "onDeleteWorkout",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Note",
+            "name" : "Workout",
             "ofType" : null
           },
           "isDeprecated" : false,

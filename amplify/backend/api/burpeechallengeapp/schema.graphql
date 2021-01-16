@@ -1,7 +1,6 @@
-type Note @model {
+type Workout @model {
   id: ID!
   name: String!
   description: String
-  image: String
-
+  total: Number
 }

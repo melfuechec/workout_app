@@ -9,9 +9,11 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Home from './components/Home';
-import { withAuthenticator } from '@aws-amplify/ui-react'
+import Auth from '@aws-amplify/auth';
+
 
 function App() {
+    let user = Auth.currentAuthenticatedUser();  
 
   return (
     <Router>
@@ -31,14 +33,13 @@ function App() {
               <Info />
             </Route>
           </Switch>
-
         </div>
       </Provider>
     </Router>
   )
 }
 
-export default withAuthenticator(App);
+export default App
 
 // You have deployed a web application using AWS Amplify! You have added authentication 
 // to your app allowing users to sign up, sign in, and manage their account. The app also 
